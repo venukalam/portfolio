@@ -1,0 +1,21 @@
+{
+  "short_name": "Venu",
+  "name": "Venu Kalam",
+  "role": "Programmer",
+  "personal_details" : {
+    "address" : "Hyderbad, Telangana, India. 500070",
+     "mobile_number" : "9381338831",
+     "email" : "	kalamvenu@gmail.com",
+      "dob" : "",
+     "languages" : ["English","Telugu"]
+   },
+"professional_details" : {
+"about":"Creative Full Stack Developer offering 3+ years of experience providing high-impact web solutions for diverse industry organizations. Skilled in designing, developing and testing multiple web-based applications incorporating a range of technologies. Proven ability in optimizing web functionality that improve data retrieval and workflow efficiencies. Aspiring to combine broad background with strong technical skills to excel as a Full-Stack Developer.",
+  "work_experience":[{},{}],
+  "skills":[],
+  "education" : [{},{}],
+  "awards" : [{},{}],
+  "interests" : [{},{}]
+  
+}
+}
