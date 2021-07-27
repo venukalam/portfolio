@@ -6,7 +6,7 @@ import Twitter from './components/social-media/twitter';
 function App() {
   return (
     <div className="App">
-    
+    hello world
     </div>
   );
 }
