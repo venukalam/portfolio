@@ -1,12 +1,15 @@
 {
-    "short_name": "Venu",
-    "name": "Venu Kalam",
-    "role": "Programmer",
+    "name": "Venu",
+    "full_name": "Venu Kalam",
+    "role": "Software Engineer",
+    "github" : "@venukalam",
+    "linkedin" : "https://www.linkedin.com/in/venu-kalam-14aaa6138/",
+    "twitter" : "@venukalam",
     "personal_details": {
         "address": "Hyderbad, Telangana, India. 500070",
         "mobile_number": "9381338831",
         "email": "kalamvenu@gmail.com",
-        "dob": "",
+        "dob": "1996-10-12T00:00:00.000Z",
         "languages": [
             "English",
             "Telugu"
@@ -15,21 +18,96 @@
     "professional_details": {
         "about": "Creative Full Stack Developer offering 3+ years of experience providing high-impact web solutions for diverse industry organizations. Skilled in designing, developing and testing multiple web-based applications incorporating a range of technologies. Proven ability in optimizing web functionality that improve data retrieval and workflow efficiencies. Aspiring to combine broad background with strong technical skills to excel as a Full-Stack Developer.",
         "work_experience": [
-            {},
-            {}
+            {
+                "company": "Acuvate",
+                "location": "Hyderabad",
+                "position": "Software Engineer",
+                "start-date": "2018-08-27T00:00:00.000Z",
+                "end-date": "",
+                "projects": [
+                    {
+                        "title": "Neptune - DRMS",
+                        "description": "Built a tool to provision SharePoint sites using Site Scripts to enable a effective Information architecture across the Neptune Organization",
+                        "technologies_used": [
+                            "SharePoint",
+                            "Azure Function Apps",
+                            "Azure Logic Apps",
+                            "PowerShell / Sharepoint Online PowerShell / PnP PowerShell",
+                            "Power Apps",
+                            "Power Automate"
+                        ]
+                    },
+                    {
+                        "title": "Bajaj - Admin Services Revamp",
+                        "description": "Revamped a portal built on Angular to serve 30k + employees with a team of 3 members. Improved the user experience by making use of PWA to enable offline features and faster loading. Implemented many other security related features like SSO, JWT Tokens, Recaptcha and Analytics to name a few.",
+                        "technologies_used": [
+                            "Angular 9",
+                            ".Net Core Web API",
+                            "SQL",
+                            "SSO",
+                            "JWT",
+                            "PWA",
+                            "GIT",
+                            "JMeter for Load Testing"
+                        ]
+                    },
+                    {
+                        "title": "Bajaj - OPSEYE",
+                        "description": "Been a part of a project that deals with the finance part of my customer’s company, where we used SQL along with sharepoint to handle millions of transactions that happens on a daily basis.",
+                        "technologies_used": [
+                            "React JS",
+                            "SharePoint",
+                            "SQL",
+                            ".Net Framework Web API"
+                        ]
+                    },
+                    {
+                        "title": "Bajaj - DAC",
+                        "description": "Used SPFX/React environment to create an internal site on sharepoint which is now being used by the Top level folks in my customer’s Organization.",
+                        "technologies_used": [
+                            "React JS",
+                            "SharePoint",
+                            "SQL",
+                            ".Net Framework Web API"
+                        ]
+                    }
+                ]
+            }
         ],
-        "skills": [],
+        "skills": [
+            "Angular",
+            "SharePoint Spfx",
+            "React JS",
+            "C#",
+            "SQL",
+            "JavaScript"
+        ],
         "education": [
-            {},
-            {}
+            {
+                "title": "B.Tech in Mechanical Engineering",
+                "college": "Sri Indu college of Engineering and Technology",
+                "start-date": "2013-09-01T00:00:00.000Z",
+                "end-date": "2017-05-01T00:00:00.000Z",
+                "honors": "First Class (CGPA : 6.7/10)."
+            }
         ],
         "awards": [
-            {},
-            {}
+            {
+                "title": "Came runner-up in the first ever Hackathon my company conducted - Hack Elite",
+                "description": "We were especially appreciated for our out of the box thinking we showcased in solving the challenge.",
+                "time_stamp": "2019-07-20T00:00:00.000Z"
+            },
+            {
+                "title": "Accepted multiple spot awards.",
+                "description": "Received acknowledgement from my clients (Bajaj and Neptune) on multiple occasions for the efforts invested in enhancing their products.",
+                "time_stamp": ""
+            }
         ],
         "interests": [
-            {},
-            {}
+            {
+                "title": "Wildlife",
+                "description": ""
+            }
         ]
     }
 }
