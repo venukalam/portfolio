@@ -2,6 +2,9 @@
     "name": "Venu",
     "full_name": "Venu Kalam",
     "role": "Software Engineer",
+    "github" : "@venukalam",
+    "linkedin" : "https://www.linkedin.com/in/venu-kalam-14aaa6138/",
+    "twitter" : "@venukalam",
     "personal_details": {
         "address": "Hyderbad, Telangana, India. 500070",
         "mobile_number": "9381338831",
@@ -80,16 +83,31 @@
             "JavaScript"
         ],
         "education": [
-            {},
-            {}
+            {
+                "title": "B.Tech in Mechanical Engineering",
+                "college": "Sri Indu college of Engineering and Technology",
+                "start-date": "2013-09-01T00:00:00.000Z",
+                "end-date": "2017-05-01T00:00:00.000Z",
+                "honors": "First Class (CGPA : 6.7/10)."
+            }
         ],
         "awards": [
-            {},
-            {}
+            {
+                "title": "Came runner-up in the first ever Hackathon my company conducted - Hack Elite",
+                "description": "We were especially appreciated for our out of the box thinking we showcased in solving the challenge.",
+                "time_stamp": "2019-07-20T00:00:00.000Z"
+            },
+            {
+                "title": "Accepted multiple spot awards.",
+                "description": "Received acknowledgement from my clients (Bajaj and Neptune) on multiple occasions for the efforts invested in enhancing their products.",
+                "time_stamp": ""
+            }
         ],
         "interests": [
-            {},
-            {}
+            {
+                "title": "Wildlife",
+                "description": ""
+            }
         ]
     }
 }
