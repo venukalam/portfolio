@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Fade right>
-        <h1>hello world</h1>
+        <h1>Teting CI/CD</h1>
       </Fade>
       <Texty>text</Texty>
 
