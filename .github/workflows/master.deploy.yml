@@ -21,7 +21,7 @@ jobs:
       run: |
         git config --global user.email ${{secrets.EMAIL}}
         git config --global user.name ${{secrets.USERNAME}}
-        git remote set-url origin https://${{secrets.PERSONAL_ACCESS_TOKEN}}@github.com/${{secrets.USERNAME}}/portfolio>.git
+        git remote set-url origin https://${{secrets.PERSONAL_ACCESS_TOKEN}}@github.com/${{secrets.USERNAME}}/portfolio.git
         npm run deploy
 
       #    uses: crazy-max/ghaction-github-pages@v2
