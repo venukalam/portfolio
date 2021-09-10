@@ -1,13 +1,13 @@
 {
     "name": "Venu",
     "full_name": "Venu Kalam",
-    "role": "Software Engineer",
-    "github" : "https://github.com/venukalam",
-    "linkedin" : "https://www.linkedin.com/in/venu-kalam-14aaa6138/",
-    "twitter" : "https://twitter.com/VenuKalam",
+    "role": "Full Stack Developer",
+    "github": "https://github.com/venukalam",
+    "linkedin": "https://www.linkedin.com/in/venu-kalam-14aaa6138/",
+    "twitter": "https://twitter.com/VenuKalam",
     "personal_details": {
         "address": "Hyderbad, Telangana, India. 500070",
-        "mobile_number": "9381338831",
+        "mobile_number": "(+91) 9381338831",
         "email": "kalamvenu@gmail.com",
         "dob": "1996-10-12T00:00:00.000Z",
         "languages": [
@@ -88,7 +88,8 @@
                 "college": "Sri Indu college of Engineering and Technology",
                 "start_date": "2013-09-01T00:00:00.000Z",
                 "end_date": "2017-05-01T00:00:00.000Z",
-                "honors": "First Class (CGPA : 6.7/10)."
+                "honors": "First Class (CGPA : 6.7/10).",
+                "location": "Hyderabad"
             }
         ],
         "awards": [
