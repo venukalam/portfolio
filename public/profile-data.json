@@ -22,8 +22,8 @@
                 "company": "Acuvate",
                 "location": "Hyderabad",
                 "position": "Software Engineer",
-                "start-date": "2018-08-27T00:00:00.000Z",
-                "end-date": "",
+                "start_date": "2018-08-27T00:00:00.000Z",
+                "end_date": "",
                 "projects": [
                     {
                         "title": "Neptune - DRMS",
@@ -86,8 +86,8 @@
             {
                 "title": "B.Tech in Mechanical Engineering",
                 "college": "Sri Indu college of Engineering and Technology",
-                "start-date": "2013-09-01T00:00:00.000Z",
-                "end-date": "2017-05-01T00:00:00.000Z",
+                "start_date": "2013-09-01T00:00:00.000Z",
+                "end_date": "2017-05-01T00:00:00.000Z",
                 "honors": "First Class (CGPA : 6.7/10)."
             }
         ],
