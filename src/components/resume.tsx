@@ -1,6 +1,12 @@
+import moment from "moment";
+import React from "react";
+import { ProfileData, ProfessionalDetails, WorkExperience, Project } from '../interfaces/profile-data';
 
+interface ResumeProps {
+    profileData: ProfileData | undefined;
+}
 
-function Resume() {
+export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
     return (
         <div>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
@@ -19,78 +25,74 @@ function Resume() {
 
             <div className="">
                 <div className="">
-                    <div className="relative px-12 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+                    <div className="relative px-12 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-20 space-y-12">
 
                         <div className="grid grid-cols-5 grid-rows-1 gap-6">
                             <div className="col-span-3">
-                                <p className="text-5xl font-serif font-bold"><span>Venu Kalam</span></p>
-                                <p className="text-base"><span>Full Stack Developer</span></p>
+                                <p className="text-5xl font-serif font-bold"><span>{profileData?.full_name}</span></p>
+                                <p className="text-base"><span>{profileData?.role}</span></p>
                             </div>
                             <div className="col-span-2">
-                                <p className="text-base font-bold leading-tight"><span>kalamvenu@gmail.com</span></p>
-                                <p className="text-base font-bold leading-tight"><span>(+91) 9381338831</span></p>
-                                <p className="text-base font-bold leading-tight underline text-blue-600"><span><a href="https://www.google.com/url?q=http://linkedin.com/in/venu-kalam-14aaa6138/&sa=D&source=editors&ust=1628426321864000&usg=AOvVaw2p69HQmaCNuZAjdiG_STqO">linkedin.com/in/venu-kalam-14aaa6138/</a></span></p>
-                                <p className="text-base font-bold leading-tight underline text-blue-600"><span><a href="https://www.google.com/url?q=http://venukalam.github.io/venukalam-resume/&sa=D&source=editors&ust=1628426321865000&usg=AOvVaw2HoXcJpSsxATgyw-Gs_caW">venukalam.github.io/venukalam-resume/</a></span></p>
+                                <p className="text-base font-bold leading-tight"><span>{profileData?.personal_details.email}</span></p>
+                                <p className="text-base font-bold leading-tight"><span>{profileData?.personal_details.mobile_number}</span></p>
+                                <p className="text-base font-bold leading-tight underline text-blue-600"><span><a href={profileData?.linkedin}>{profileData?.linkedin.replace("https://", "").replace("www.", "")}</a></span></p>
+                                <p className="text-base font-bold leading-tight underline text-blue-600"><span><a href={profileData?.github}>{profileData?.github.replace("https://", "").replace("www.", "")}</a></span></p>
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-5 grid-rows-1 gap-6">
-                            <div className="col-span-3 space-y-2">
-                                <div>
-                                    <p className="text-lg font-bold text-blue-600"><span>EXPERIENCE</span></p>
-                                    <p className="text-lg"><span className="font-bold">Acuvate,</span> <span>Hyderabad</span> — <span className="italic">Software Engineer</span></p>
-                                    <p className="text-sm"><span>August 2018 - PRESENT</span></p>
-                                </div>
-                                <div>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li className="text-lg leading-snug">
-                                            Revamped a portal built on Angular to serve 30k + employees with a team of 3 members. Improved the user experience by making use of PWA to enable offline features and faster loading. Implemented many other security related features like SSO, JWT Tokens, Recaptcha and Analytics to name a few.
-                                        </li>
-                                        <li className="text-lg leading-snug">
-                                            Used SPFX/React environment to create an internal site on sharepoint which is now being used by the Top level management in my client’s Organization.
-                                        </li>
-                                        <li className="text-lg leading-snug">
-                                            Built a portal that now enables over 6000 users to seamlessly collaborate on their documents and make best use of sharepoint’s document sharing and content versioning tools
-                                        </li>
-                                        <li className="text-lg leading-snug">
-                                            Been a part of a project that deals with the finance division of my client’s company (Bajaj Finserv), where we used SQL along with sharepoint  to handle millions of transactions happening  on a daily basis.
-                                        </li>
-                                    </ul>
-                                </div>
+                        <div className="grid grid-cols-5 grid-rows-1 gap-6 space-y-4">
+                            <div className="col-span-3 space-y-8">
+                                <p className="text-lg font-bold text-blue-600"><span>EXPERIENCE</span></p>
+                                {profileData?.professional_details.work_experience.map(item => {
+                                    return <WorkExperienceComponent workExperience={item} />
+                                })}
                                 <div>
                                     <p className="text-lg font-bold text-blue-600"><span>EDUCATION</span></p>
-                                    <p className="text-lg">
-                                        <span className="font-bold">Sri Indu college of Engineering and Technology,</span>
-                                        <span>Hyderabad</span> — <span className="italic">B.Tech in Mechanical Engineering</span></p>
-                                    <p className="text-sm"><span>January 2014 - May 2017</span></p>
-                                    <p className="text-lg"><span>Honors : First Class (CGPA : 6.7/10)</span></p>
+                                    {profileData?.professional_details.education.map(item => {
+                                        return (
+                                            <div>
+                                                <p className="text-lg">
+                                                    <span className="font-bold">{item?.college}, </span>
+                                                    <span>{item?.location}</span> — <span className="italic">{item?.title}</span></p>
+                                                <p className="text-sm"><span>{moment(item?.start_date).format('MMMM YYYY')} - {moment(item?.end_date).format('MMMM YYYY')}</span></p>
+                                                <p className="text-lg"><span>{item?.honors}</span></p>
+                                            </div>
+                                        );
+                                    })}
+
                                 </div>
                             </div>
-                            <div className="col-span-2">
-                                <div>
-                                    <p className="text-lg font-bold text-blue-600"><span>SKILLS</span></p>
-                                    <p className="text-lg"><span>React JS  </span></p>
-                                    <p className="text-lg"><span>Sharepoint</span></p>
-                                    <p className="text-lg"><span>Angular</span></p>
-                                    <p className="text-lg"><span>C# </span></p>
-                                    <p className="text-lg"><span>SQL</span></p>
-                                    <p className="text-lg"><span>JavaScript</span></p>
-                                    <p className="text-lg"><span>Net</span></p>
+                            <div className="col-span-2 space-y-8">
+                                <p className="text-lg font-bold text-blue-600"><span>SKILLS</span></p>
+                                <div className="space-y-2">
+                                    {profileData?.professional_details.skills.map(item => {
+                                        return (
+                                            <div>
+                                                <p className="text-lg"><span>{item}  </span></p>
+                                                {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg> */}
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                                 <div>
                                     <p className="text-lg font-bold text-blue-600"><span>AWARDS</span></p>
-                                    <ul className="list-disc list-inside space-y-2">
-                                        <li className="text-lg leading-snug">
-                                            Came runner-up in the first ever Hackathon my company conducted. We were especially appreciated for our out of the box thinking we showcased in solving the challenge.
-                                        </li>
-                                        <li className="text-lg leading-snug">
-                                            Accepted multiple spot awards.       Received acknowledgement from my client on multiple occasions for the efforts invested in enhancing their products.
-                                        </li>
-                                    </ul>
+                                    <div>
+                                        {profileData?.professional_details.awards.map(item => {
+                                            return (
+                                                <div>
+                                                    <p className="text-lg"><span className="font-bold">{item?.title} :</span></p>
+                                                    {item?.time_stamp ? <p className="text-sm"><span>{moment(item?.time_stamp).format('MMMM YYYY')}</span></p> : ""}
+                                                    <p className="text-sm"><span>{item?.description}</span></p>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
                                 </div>
                                 <div>
                                     <p className="text-lg font-bold text-blue-600"><span>LANGUAGES</span></p>
-                                    <p className="text-lg"><span>English, Telugu</span></p>
+                                    <p className="text-lg"><span>{profileData?.personal_details.languages.join(',')}</span></p>
                                 </div>
                             </div>
                         </div>
@@ -99,6 +101,32 @@ function Resume() {
             </div>
         </div>
     );
+};
+
+
+const WorkExperienceComponent = ({ workExperience }: { workExperience: WorkExperience }) => {
+    return (
+        <div>
+            <div>
+                <p className="text-lg"><span className="font-bold">{workExperience?.company},</span> <span>{workExperience?.location}</span> — <span className="italic">{workExperience?.position}</span></p>
+                <p className="text-sm"><span>{moment(workExperience?.start_date).format('MMMM YYYY')} - {workExperience?.end_date ? moment(workExperience?.end_date).format('MMMM YYYY') : "PRESENT"}</span></p>
+            </div>
+            <div>
+                {workExperience?.projects.map((item) => {
+                    return <ProjectsComponent project={item} />
+                })}
+            </div>
+        </div>
+    );
 }
 
-export default Resume;
+
+const ProjectsComponent = ({ project }: { project: Project }) => {
+    return (
+        <div>
+            <p className="text-lg"><span className="font-bold">{project?.title} :</span></p>
+            <p className="text-sm"><span>{project?.description}</span></p>
+            <p className="text-sm"><span className="font-bold">Technologies Used :</span><span>{project?.technologies_used.join(',')}</span></p>
+        </div>
+    );
+}

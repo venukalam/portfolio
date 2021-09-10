@@ -1,25 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  withRouter,
+  Link, NavLink
+} from "react-router-dom";
+// import logo from './logo.svg';
 import './App.css';
-import Twitter from './components/twitter';
-import Location from './components/location';
-import Resume from './components/resume';
-import Fade from 'react-reveal/Fade';
-import TweenOne from 'rc-tween-one';
-import Texty from 'rc-texty';
+// import Twitter from './components/twitter';
+// import Location from './components/location';
+import {Resume} from './components/resume';
+// import Fade from 'react-reveal/Fade';
+// import TweenOne from 'rc-tween-one';
+// import Texty from 'rc-texty';
 // import { Element } from 'rc-scroll-anim';
-import BannerAnim, { Element } from 'rc-banner-anim';
+// import BannerAnim, { Element } from 'rc-banner-anim';
+import ProfileData from './interfaces/profile-data';
+
 function App() {
 
-  // fetch("https://venukalam.github.io/portfolio/profile-data.json")
-  //   .then(response => response.json())
-  //   .then(data => console.log(data));
+  const [profileData, setProfileData] = useState<ProfileData | undefined>(undefined);
+
+  useEffect(() => {
+    loadProfileData();
+  }, []);
+
+
+  const loadProfileData = async () => {
+    fetch("https://venukalam.github.io/portfolio/profile-data.json")
+      .then(response => response.json())
+      .then((data: ProfileData) => {
+        setProfileData(data);
+        console.log(data);
+      });
+  };
+
   return (
-    <div>
-        <div>
-        <Resume />
-      </div>
-      {/* <header className="bg-gray-800 md:sticky top-0 z-10">
+    <Router>
+      <div className="App">
+        {/* <Navbar /> */}
+        <NavLink className="nav-link" exact to="/resume">
+          Resume
+        </NavLink>
+        <NavLink className="nav-link" exact to="/">
+          Home
+        </NavLink>
+        <Switch>
+          {/* <Route exact path="/" component={Resume} /> */}
+          <Route exact path="/resume" render={(props) => <Resume profileData={profileData} />} />
+          {/* <Route exact path="/contact" component={Contact} />
+        <Route exact path="/users/add" component={AddUser} />
+        <Route exact path="/users/edit/:id" component={EditUser} />
+        <Route exact path="/users/:id" component={User} /> */}
+          {/* <Route component={function NotFound() {
+            return (<h1>Page not found</h1>)
+          }} /> */}
+        </Switch>
+        {/* <header className="bg-gray-800 md:sticky top-0 z-10">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a className="title-font font-medium text-white mb-4 md:mb-0">
             <a href="#about" className="ml-3 text-xl">
@@ -61,7 +99,8 @@ function App() {
           <TweenOne animation={{ x: -30, type: 'from' }}>Ant Motion Demo</TweenOne>
         </Element>
       </BannerAnim> */}
-    </div>
+      </div>
+    </Router>
   );
 }
 
