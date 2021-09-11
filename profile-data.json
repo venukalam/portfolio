@@ -3,6 +3,7 @@
     "full_name": "Venu Kalam",
     "role": "Full Stack Developer",
     "github": "https://github.com/venukalam",
+    "portfolio": "https://github.com/venukalam",
     "linkedin": "https://www.linkedin.com/in/venu-kalam-14aaa6138/",
     "twitter": "https://twitter.com/VenuKalam",
     "personal_details": {
@@ -27,7 +28,9 @@
                 "projects": [
                     {
                         "title": "Neptune - DRMS",
-                        "description": "Built a tool to provision SharePoint sites using Site Scripts to enable a effective Information architecture across the Neptune Organization",
+                        "description": [
+                            "Built a tool to provision SharePoint sites using Site Scripts to enable a effective Information architecture across the Neptune Organization"
+                        ],
                         "technologies_used": [
                             "SharePoint",
                             "Azure Function Apps",
@@ -39,7 +42,9 @@
                     },
                     {
                         "title": "Bajaj - Admin Services Revamp",
-                        "description": "Revamped a portal built on Angular to serve 30k + employees with a team of 3 members. Improved the user experience by making use of PWA to enable offline features and faster loading. Implemented many other security related features like SSO, JWT Tokens, Recaptcha and Analytics to name a few.",
+                        "description": [
+                            "Revamped a portal built on Angular to serve 30k + employees with a team of 3 members. Improved the user experience by making use of PWA to enable offline features and faster loading. Implemented many other security related features like SSO, JWT Tokens, Recaptcha and Analytics to name a few."
+                        ],
                         "technologies_used": [
                             "Angular 9",
                             ".Net Core Web API",
@@ -53,7 +58,9 @@
                     },
                     {
                         "title": "Bajaj - OPSEYE",
-                        "description": "Been a part of a project that deals with the finance part of my customer’s company, where we used SQL along with sharepoint to handle millions of transactions that happens on a daily basis.",
+                        "description": [
+                            "Been a part of a project that deals with the finance part of my customer’s company, where we used SQL along with sharepoint to handle millions of transactions that happens on a daily basis."
+                        ],
                         "technologies_used": [
                             "React JS",
                             "SharePoint",
@@ -63,7 +70,9 @@
                     },
                     {
                         "title": "Bajaj - DAC",
-                        "description": "Used SPFX/React environment to create an internal site on sharepoint which is now being used by the Top level folks in my customer’s Organization.",
+                        "description": [
+                            "Used SPFX/React environment to create an internal site on sharepoint which is now being used by the Top level folks in my customer’s Organization."
+                        ],
                         "technologies_used": [
                             "React JS",
                             "SharePoint",
@@ -75,12 +84,30 @@
             }
         ],
         "skills": [
-            "Angular",
-            "SharePoint Spfx",
-            "React JS",
-            "C#",
-            "SQL",
-            "JavaScript"
+            {
+                "title": "Angular",
+                "expertise": ""
+            },
+            {
+                "title": "SharePoint Spfx",
+                "expertise": ""
+            },
+            {
+                "title": "React JS",
+                "expertise": ""
+            },
+            {
+                "title": "C#",
+                "expertise": ""
+            },
+            {
+                "title": "SQL",
+                "expertise": ""
+            },
+            {
+                "title": "JavaScript",
+                "expertise": ""
+            }
         ],
         "education": [
             {
@@ -93,6 +120,11 @@
             }
         ],
         "awards": [
+            {
+                "title": "Microsoft Certified: Power Platform Developer Associate (PL400)",
+                "description": "",
+                "time_stamp": ""
+            },
             {
                 "title": "Came runner-up in the first ever Hackathon my company conducted - Hack Elite",
                 "description": "We were especially appreciated for our out of the box thinking we showcased in solving the challenge.",
