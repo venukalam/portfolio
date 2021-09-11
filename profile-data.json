@@ -27,23 +27,26 @@
                 "end_date": "",
                 "projects": [
                     {
-                        "title": "Neptune - DRMS",
+                        "title": "Neptune - Provisioning Tool",
                         "description": [
-                            "Built a tool to provision SharePoint sites using Site Scripts to enable a effective Information architecture across the Neptune Organization"
+                            "Implemented an effective Information Architechture across Neptune by developing an application that allows users to request and provsion Sharepoint sites",
+                            "Provisioned over 1800 existing sites with Record mangement features by using Powershell scripts"
                         ],
                         "technologies_used": [
                             "SharePoint",
-                            "Azure Function Apps",
-                            "Azure Logic Apps",
-                            "PowerShell / Sharepoint Online PowerShell / PnP PowerShell",
-                            "Power Apps",
-                            "Power Automate"
+                            "Azure Function Apps/Logic Apps",
+                            "PowerShell/PnP PowerShell",
+                            "Power Apps/Power Automate"
                         ]
                     },
                     {
                         "title": "Bajaj - Admin Services Revamp",
                         "description": [
-                            "Revamped a portal built on Angular to serve 30k + employees with a team of 3 members. Improved the user experience by making use of PWA to enable offline features and faster loading. Implemented many other security related features like SSO, JWT Tokens, Recaptcha and Analytics to name a few."
+                            "Revamped a portal built on Angular to serve 30k+ employees",
+                            "Improved user experience by making use of PWA to enable offline features and increase page load performance by 30%",
+                            "Increased data query response time by 15% by restructuring API",
+                            "Improved Security score by fixing vulnerability issues identified using Bugs bounty and Check Matrix",
+                            "Implemented many other security related features like SSO, JWT Tokens, Recaptcha and Analytics to name a few"
                         ],
                         "technologies_used": [
                             "Angular 9",
@@ -52,26 +55,14 @@
                             "SSO",
                             "JWT",
                             "PWA",
-                            "GIT",
                             "JMeter for Load Testing"
-                        ]
-                    },
-                    {
-                        "title": "Bajaj - OPSEYE",
-                        "description": [
-                            "Been a part of a project that deals with the finance part of my customer’s company, where we used SQL along with sharepoint to handle millions of transactions that happens on a daily basis."
-                        ],
-                        "technologies_used": [
-                            "React JS",
-                            "SharePoint",
-                            "SQL",
-                            ".Net Framework Web API"
                         ]
                     },
                     {
                         "title": "Bajaj - DAC",
                         "description": [
-                            "Used SPFX/React environment to create an internal site on sharepoint which is now being used by the Top level folks in my customer’s Organization."
+                            "Responsible for full stack development of a disciplinary action committee Sharepoint site, now being used by Top level management in Bajaj Finserv",
+                            "Developed Business Intelligent reports making Organizaiton level employee behaviour analysis easier"
                         ],
                         "technologies_used": [
                             "React JS",
@@ -115,24 +106,24 @@
                 "college": "Sri Indu college of Engineering and Technology",
                 "start_date": "2013-09-01T00:00:00.000Z",
                 "end_date": "2017-05-01T00:00:00.000Z",
-                "honors": "First Class (CGPA : 6.7/10).",
+                "honors": "First Class",
                 "location": "Hyderabad"
             }
         ],
         "awards": [
             {
-                "title": "Microsoft Certified: Power Platform Developer Associate (PL400)",
+                "title": "Microsoft Certified Power Platform Developer Associate",
                 "description": "",
-                "time_stamp": ""
+                "time_stamp": "2021-08-21T00:00:00.000Z"
             },
             {
-                "title": "Came runner-up in the first ever Hackathon my company conducted - Hack Elite",
-                "description": "We were especially appreciated for our out of the box thinking we showcased in solving the challenge.",
+                "title": "Named runner-up among 10 teams in the first ever Hackathon my company conducted - Hack Elite",
+                "description": "",
                 "time_stamp": "2019-07-20T00:00:00.000Z"
             },
             {
-                "title": "Accepted multiple spot awards.",
-                "description": "Received acknowledgement from my clients (Bajaj and Neptune) on multiple occasions for the efforts invested in enhancing their products.",
+                "title": "Accepted multiple spot awards",
+                "description": "Received acknowledgement from my clients (Bajaj and Neptune) on multiple occasions for the efforts invested in enhancing their products",
                 "time_stamp": ""
             }
         ],
