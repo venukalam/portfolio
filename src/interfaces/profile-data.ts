@@ -3,6 +3,7 @@ export interface ProfileData {
     full_name: string;
     role: string;
     github: string;
+    portfolio: string;
     linkedin: string;
     twitter: string;
     personal_details: PersonalDetails;
@@ -20,7 +21,7 @@ export interface PersonalDetails {
 export interface ProfessionalDetails {
     about: string;
     work_experience: WorkExperience[];
-    skills: string[];
+    skills: Skill[];
     education: Education[];
     awards: Award[];
     interests: Interest[];
@@ -46,6 +47,11 @@ export interface Interest {
     description: string;
 }
 
+export interface Skill {
+    title: string;
+    expertise: string;
+}
+
 export interface WorkExperience {
     company: string;
     location: string;
@@ -57,7 +63,7 @@ export interface WorkExperience {
 
 export interface Project {
     title: string;
-    description: string;
+    description: string[];
     technologies_used: string[];
 }
 
