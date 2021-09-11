@@ -29,7 +29,7 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
 
                         <div className="grid grid-cols-5 grid-rows-1 gap-6">
                             <div className="col-span-3">
-                                <p className="text-5xl font-serif font-bold"><span>{profileData?.full_name}</span></p>
+                                <p className="text-6xl font-serif font-bold"><span>{profileData?.full_name}</span></p>
                                 <p className="text-base"><span>{profileData?.role}</span></p>
                             </div>
                             <div className="col-span-2">
@@ -46,7 +46,7 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
                                 {profileData?.professional_details.work_experience.map(item => {
                                     return <WorkExperienceComponent workExperience={item} />
                                 })}
-                                <div>
+                                <div className="space-y-2">
                                     <p className="text-lg font-bold text-blue-600"><span>EDUCATION</span></p>
                                     {profileData?.professional_details.education.map(item => {
                                         return (
@@ -55,7 +55,7 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
                                                     <span className="font-bold">{item?.college}, </span>
                                                     <span>{item?.location}</span> — <span className="italic">{item?.title}</span></p>
                                                 <p className="text-sm"><span>{moment(item?.start_date).format('MMMM YYYY')} - {moment(item?.end_date).format('MMMM YYYY')}</span></p>
-                                                <p className="text-lg"><span>{item?.honors}</span></p>
+                                                <p className="text-lg"><span>Honors: {item?.honors}</span></p>
                                             </div>
                                         );
                                     })}
@@ -68,7 +68,7 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
                                     {profileData?.professional_details.skills.map(item => {
                                         return (
                                             <div>
-                                                <p className="text-lg"><span>{item}  </span></p>
+                                                <p className="text-lg"><span>{item.title}  </span></p>
                                                 {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                     </svg> */}
@@ -76,13 +76,13 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
                                         );
                                     })}
                                 </div>
-                                <div>
-                                    <p className="text-lg font-bold text-blue-600"><span>AWARDS</span></p>
-                                    <div>
+                                <div className="space-y-2">
+                                    <p className="text-lg font-bold text-blue-600"><span>AWARDS/CERTIFICATIONS</span></p>
+                                    <div className="space-y-2">
                                         {profileData?.professional_details.awards.map(item => {
                                             return (
-                                                <div>
-                                                    <p className="text-lg"><span className="font-bold">{item?.title} :</span></p>
+                                                <div className="">
+                                                    <p className=""><span className="font-bold">{item?.title}</span></p>
                                                     {item?.time_stamp ? <p className="text-sm"><span>{moment(item?.time_stamp).format('MMMM YYYY')}</span></p> : ""}
                                                     <p className="text-sm"><span>{item?.description}</span></p>
                                                 </div>
@@ -90,9 +90,9 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
                                         })}
                                     </div>
                                 </div>
-                                <div>
+                                <div className="space-y-2">
                                     <p className="text-lg font-bold text-blue-600"><span>LANGUAGES</span></p>
-                                    <p className="text-lg"><span>{profileData?.personal_details.languages.join(',')}</span></p>
+                                    <p className="text-lg"><span>{profileData?.personal_details.languages.join(', ')}</span></p>
                                 </div>
                             </div>
                         </div>
@@ -106,12 +106,12 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
 
 const WorkExperienceComponent = ({ workExperience }: { workExperience: WorkExperience }) => {
     return (
-        <div>
+        <div className="space-y-4">
             <div>
                 <p className="text-lg"><span className="font-bold">{workExperience?.company},</span> <span>{workExperience?.location}</span> — <span className="italic">{workExperience?.position}</span></p>
-                <p className="text-sm"><span>{moment(workExperience?.start_date).format('MMMM YYYY')} - {workExperience?.end_date ? moment(workExperience?.end_date).format('MMMM YYYY') : "PRESENT"}</span></p>
+                <p className="text-sm"><span >{moment(workExperience?.start_date).format('MMMM YYYY')} - {workExperience?.end_date ? moment(workExperience?.end_date).format('MMMM YYYY') : "PRESENT"}</span></p>
             </div>
-            <div>
+            <div className="space-y-2">
                 {workExperience?.projects.map((item) => {
                     return <ProjectsComponent project={item} />
                 })}
@@ -123,10 +123,18 @@ const WorkExperienceComponent = ({ workExperience }: { workExperience: WorkExper
 
 const ProjectsComponent = ({ project }: { project: Project }) => {
     return (
-        <div>
-            <p className="text-lg"><span className="font-bold">{project?.title} :</span></p>
-            <p className="text-sm"><span>{project?.description}</span></p>
-            <p className="text-sm"><span className="font-bold">Technologies Used :</span><span>{project?.technologies_used.join(',')}</span></p>
+        <div className="space-y-1">
+            <p className="text-lg"><span className="font-bold">{project?.title}</span></p>
+            <p className="text-sm"><span className="font-bold">Technologies Used: </span><span>{project?.technologies_used.join(', ')}</span></p>
+            <ul className="list-disc list-inside space-y-1">
+                {project?.description.map(item => {
+                    return (
+                        <li className="text-sm leading-snug">
+                            {item}
+                        </li>
+                    );
+                })}
+            </ul>
         </div>
     );
 }
