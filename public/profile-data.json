@@ -45,7 +45,7 @@
                             "Revamped a portal built on Angular to serve 30k+ employees",
                             "Improved user experience by making use of PWA to enable offline features and increase page load performance by 30%",
                             "Increased data query response time by 15% by restructuring API",
-                            "Improved Security score by fixing vulnerability issues identified using Bugs bounty and Check Matrix",
+                            "Improved Security score by fixing vulnerability issues identified using Bug bounty and Checkmarx",
                             "Implemented many other security related features like SSO, JWT Tokens, Recaptcha and Analytics to name a few"
                         ],
                         "technologies_used": [
