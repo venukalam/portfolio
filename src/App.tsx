@@ -39,12 +39,17 @@ function App() {
 
   useEffect(() => {
     if (checkMobile()) {
-      setIsMobile(false);
-      alert("its a mobile")
+      setIsMobile(true);
+      alert("This site is currently available only in desktop mode");
+      var metaTag = document.createElement('meta');
+      metaTag.name = "viewport"
+      // metaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      metaTag.content = "width=1024"
+      document.getElementsByTagName('head')[0].appendChild(metaTag);
     } else {
       setIsMobile(false);
-      loadProfileData();
     }
+    loadProfileData();
   }, []);
 
 
@@ -59,28 +64,27 @@ function App() {
 
   return (
     <div>
-      {isMobile ? "" :
-        <Router>
-          < div className="App" >
-            {/* <Navbar /> */}
-            < NavLink className="nav-link" exact to="/resume" >
-              Resume
-            </NavLink >
-            <NavLink className="nav-link" exact to="/">
-              Home
-            </NavLink>
-            <Switch>
-              {/* <Route exact path="/" component={Resume} /> */}
-              <Route exact path="/resume" render={(props) => <Resume profileData={profileData} />} />
-              {/* <Route exact path="/contact" component={Contact} />
+      <Router>
+        < div className="App" >
+          {/* <Navbar /> */}
+          < NavLink className="nav-link" exact to="/resume" >
+            Resume
+          </NavLink >
+          <NavLink className="nav-link" exact to="/">
+            Home
+          </NavLink>
+          <Switch>
+            {/* <Route exact path="/" component={Resume} /> */}
+            <Route exact path="/resume" render={(props) => <Resume profileData={profileData} />} />
+            {/* <Route exact path="/contact" component={Contact} />
         <Route exact path="/users/add" component={AddUser} />
         <Route exact path="/users/edit/:id" component={EditUser} />
         <Route exact path="/users/:id" component={User} /> */}
-              {/* <Route component={function NotFound() {
+            {/* <Route component={function NotFound() {
             return (<h1>Page not found</h1>)
           }} /> */}
-            </Switch>
-            {/* <header className="bg-gray-800 md:sticky top-0 z-10">
+          </Switch>
+          {/* <header className="bg-gray-800 md:sticky top-0 z-10">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a className="title-font font-medium text-white mb-4 md:mb-0">
             <a href="#about" className="ml-3 text-xl">
@@ -122,9 +126,8 @@ function App() {
           <TweenOne animation={{ x: -30, type: 'from' }}>Ant Motion Demo</TweenOne>
         </Element>
       </BannerAnim> */}
-          </div >
-        </Router >
-      }
+        </div >
+      </Router >
     </div>
   );
 }

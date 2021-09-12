@@ -17,19 +17,6 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
             setIsEditMode(false);
         };
         window.onafterprint = afterPrint;
-
-        var metaTag = document.createElement('meta');
-        metaTag.name = "viewport"
-        // metaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-        metaTag.content = "width=1024"
-        document.getElementsByTagName('head')[0].appendChild(metaTag);
-
-        // var viewport = document.querySelector("meta[name=viewport]");
-        // if (viewMode == "desktop") {
-        //     viewport.setAttribute('content', 'width=1024');
-        // } else if (viewMode == "mobile") {
-        //     viewport.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
-        // }
     }, []);
 
     useEffect(() => {
@@ -37,17 +24,6 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
             window.print()
         }
     }, [hideButtons])
-
-    function getCookie(cName) {
-        const name = cName + "=";
-        const cDecoded = decodeURIComponent(document.cookie); //to be careful
-        const cArr = cDecoded.split('; ');
-        let res;
-        cArr.forEach(val => {
-            if (val.indexOf(name) === 0) res = val.substring(name.length);
-        })
-        return res
-    }
 
     return (
         <div>
@@ -75,90 +51,88 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
             }
 
             <div className="">
-                <div className="">
-                    <div className="relative px-12 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-20 space-y-12">
+                <div className="relative px-12 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-20 space-y-12">
 
-                        <div className="grid grid-cols-5 grid-rows-1 gap-6">
-                            <div className="col-span-3">
-                                <p className="text-6xl font-serif font-bold"><span>{profileData?.full_name}</span></p>
-                                <p className="text-base"><span>{profileData?.role}</span></p>
-                            </div>
-                            <div className="col-span-2">
-                                <p className="text-base font-bold leading-tight"><span>{profileData?.personal_details.email}</span></p>
-                                <p className="text-base font-bold leading-tight"><span>{profileData?.personal_details.mobile_number}</span></p>
-                                <p className="text-base font-bold leading-tight underline text-blue-600"><span><a href={profileData?.linkedin}>{profileData?.linkedin.replace("https://", "").replace("www.", "")}</a></span></p>
-                                <p className="text-base font-bold leading-tight underline text-blue-600"><span><a href={profileData?.github}>{profileData?.github.replace("https://", "").replace("www.", "")}</a></span></p>
+                    <div className="grid grid-cols-5 grid-rows-1 gap-6">
+                        <div className="col-span-3">
+                            <p className="text-6xl font-serif font-bold"><span>{profileData?.full_name}</span></p>
+                            <p className="text-base"><span>{profileData?.role}</span></p>
+                        </div>
+                        <div className="col-span-2">
+                            <p className="text-base font-bold leading-tight"><span>{profileData?.personal_details.email}</span></p>
+                            <p className="text-base font-bold leading-tight"><span>{profileData?.personal_details.mobile_number}</span></p>
+                            <p className="text-base font-bold leading-tight underline text-blue-600"><span><a href={profileData?.linkedin}>{profileData?.linkedin.replace("https://", "").replace("www.", "")}</a></span></p>
+                            <p className="text-base font-bold leading-tight underline text-blue-600"><span><a href={profileData?.github}>{profileData?.github.replace("https://", "").replace("www.", "")}</a></span></p>
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-5 grid-rows-1 gap-6 space-y-4">
+                        <div className="col-span-3 space-y-8">
+                            <p className="text-lg font-bold text-blue-600"><span>EXPERIENCE</span></p>
+                            {profileData?.professional_details.work_experience.map(item => {
+                                return <WorkExperienceComponent workExperience={item} />
+                            })}
+                            <div className="space-y-2">
+                                <p className="text-lg font-bold text-blue-600"><span>EDUCATION</span></p>
+                                {profileData?.professional_details.education.map(item => {
+                                    return (
+                                        <div>
+                                            <p className="text-lg">
+                                                <span className="font-bold">{item?.college}, </span>
+                                                <span>{item?.location}</span> — <span className="italic">{item?.title}</span></p>
+                                            <p className="text-sm"><span>{moment(item?.start_date).format('MMMM YYYY')} - {moment(item?.end_date).format('MMMM YYYY')}</span></p>
+                                            <p className="text-lg"><span>Honors: {item?.honors}</span></p>
+                                        </div>
+                                    );
+                                })}
+
                             </div>
                         </div>
-
-                        <div className="grid grid-cols-5 grid-rows-1 gap-6 space-y-4">
-                            <div className="col-span-3 space-y-8">
-                                <p className="text-lg font-bold text-blue-600"><span>EXPERIENCE</span></p>
-                                {profileData?.professional_details.work_experience.map(item => {
-                                    return <WorkExperienceComponent workExperience={item} />
-                                })}
+                        <div className="col-span-2 space-y-8">
+                            <p className="text-lg font-bold text-blue-600"><span>SKILLS</span></p>
+                            <div className="space-y-2">
+                                <table className="table-fixed">
+                                    <tbody>
+                                        {profileData?.professional_details.skills.map(item => {
+                                            return (
+                                                <tr className="">
+                                                    <td className="w-1/6">
+                                                        <p className="text-lg"><span>{item.title}  </span></p>
+                                                    </td>
+                                                    <td className="w-1/2">
+                                                        <div className="inline-flex items-center">
+                                                            {new Array(item.expertise).fill(0).map(item => {
+                                                                return (
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                                                    </svg>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            );
+                                        })}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="space-y-2">
+                                <p className="text-lg font-bold text-blue-600"><span>AWARDS/CERTIFICATIONS</span></p>
                                 <div className="space-y-2">
-                                    <p className="text-lg font-bold text-blue-600"><span>EDUCATION</span></p>
-                                    {profileData?.professional_details.education.map(item => {
+                                    {profileData?.professional_details.awards.map(item => {
                                         return (
-                                            <div>
-                                                <p className="text-lg">
-                                                    <span className="font-bold">{item?.college}, </span>
-                                                    <span>{item?.location}</span> — <span className="italic">{item?.title}</span></p>
-                                                <p className="text-sm"><span>{moment(item?.start_date).format('MMMM YYYY')} - {moment(item?.end_date).format('MMMM YYYY')}</span></p>
-                                                <p className="text-lg"><span>Honors: {item?.honors}</span></p>
+                                            <div className="">
+                                                <p className=""><span className="font-bold">{item?.title}</span></p>
+                                                {item?.time_stamp ? <p className="text-sm"><span>{moment(item?.time_stamp).format('MMMM YYYY')}</span></p> : ""}
+                                                <p className="text-sm"><span>{item?.description}</span></p>
                                             </div>
                                         );
                                     })}
-
                                 </div>
                             </div>
-                            <div className="col-span-2 space-y-8">
-                                <p className="text-lg font-bold text-blue-600"><span>SKILLS</span></p>
-                                <div className="space-y-2">
-                                    <table className="table-fixed">
-                                        <tbody>
-                                            {profileData?.professional_details.skills.map(item => {
-                                                return (
-                                                    <tr className="">
-                                                        <td className="w-1/6">
-                                                            <p className="text-lg"><span>{item.title}  </span></p>
-                                                        </td>
-                                                        <td className="w-1/2">
-                                                            <div className="inline-flex items-center">
-                                                                {new Array(item.expertise).fill(0).map(item => {
-                                                                    return (
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                                                        </svg>
-                                                                    );
-                                                                })}
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                );
-                                            })}
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div className="space-y-2">
-                                    <p className="text-lg font-bold text-blue-600"><span>AWARDS/CERTIFICATIONS</span></p>
-                                    <div className="space-y-2">
-                                        {profileData?.professional_details.awards.map(item => {
-                                            return (
-                                                <div className="">
-                                                    <p className=""><span className="font-bold">{item?.title}</span></p>
-                                                    {item?.time_stamp ? <p className="text-sm"><span>{moment(item?.time_stamp).format('MMMM YYYY')}</span></p> : ""}
-                                                    <p className="text-sm"><span>{item?.description}</span></p>
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <p className="text-lg font-bold text-blue-600"><span>LANGUAGES</span></p>
-                                    <p className="text-lg"><span>{profileData?.personal_details.languages.join(', ')}</span></p>
-                                </div>
+                            <div className="space-y-2">
+                                <p className="text-lg font-bold text-blue-600"><span>LANGUAGES</span></p>
+                                <p className="text-lg"><span>{profileData?.personal_details.languages.join(', ')}</span></p>
                             </div>
                         </div>
                     </div>
