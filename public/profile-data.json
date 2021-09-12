@@ -27,19 +27,6 @@
                 "end_date": "",
                 "projects": [
                     {
-                        "title": "Neptune - Provisioning Tool",
-                        "description": [
-                            "Implemented an effective Information Architechture across Neptune by developing an application that allows users to request and provsion Sharepoint sites",
-                            "Provisioned over 1800 existing sites with Record mangement features by using Powershell scripts"
-                        ],
-                        "technologies_used": [
-                            "SharePoint",
-                            "Azure Function Apps/Logic Apps",
-                            "PowerShell/PnP PowerShell",
-                            "Power Apps/Power Automate"
-                        ]
-                    },
-                    {
                         "title": "Bajaj - Admin Services Revamp",
                         "description": [
                             "Revamped a portal built on Angular to serve 30k+ employees",
@@ -62,13 +49,26 @@
                         "title": "Bajaj - DAC",
                         "description": [
                             "Responsible for full stack development of a disciplinary action committee Sharepoint site, now being used by Top level management in Bajaj Finserv",
-                            "Developed Business Intelligent reports making Organizaiton level employee behaviour analysis easier"
+                            "Developed Business Intelligence reports making Organization level employee behaviour analysis easier"
                         ],
                         "technologies_used": [
                             "React JS",
                             "SharePoint",
                             "SQL",
                             ".Net Framework Web API"
+                        ]
+                    },
+                      {
+                        "title": "Neptune - Provisioning Tool",
+                        "description": [
+                            "Implemented an effective Information Architecture across Neptune by developing an application that allows users to request and provision Sharepoint sites",
+                            "Provisioned over 1800 existing sites with Record management features by using Powershell scripts"
+                        ],
+                        "technologies_used": [
+                            "SharePoint",
+                            "Azure Function Apps/Logic Apps",
+                            "PowerShell/PnP PowerShell",
+                            "Power Apps/Power Automate"
                         ]
                     }
                 ]
@@ -99,6 +99,10 @@
                 "title": "JavaScript",
                 "expertise": 5
             },
+             {
+                "title": "Power Platform",
+                "expertise": 4
+            },
             {
                 "title": ".Net",
                 "expertise": 4
@@ -127,7 +131,7 @@
             },
             {
                 "title": "Accepted multiple spot awards",
-                "description": "Received acknowledgement from my clients (Bajaj and Neptune) on multiple occasions for the efforts invested in enhancing their products",
+                "description": "Received acknowledgement from clients on multiple occasions for the efforts invested in enhancing their products",
                 "time_stamp": ""
             }
         ],
