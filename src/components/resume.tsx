@@ -52,7 +52,6 @@ export const Resume: React.FC<ResumeProps> = ({ profileData }: ResumeProps) => {
 
             <div className="">
                 <div className="relative px-12 py-12 bg-white shadow-lg sm:rounded-3xl sm:p-20 space-y-12">
-
                     <div className="grid grid-cols-5 grid-rows-1 gap-6">
                         <div className="col-span-3">
                             <p className="text-6xl font-serif font-bold"><span>{profileData?.full_name}</span></p>

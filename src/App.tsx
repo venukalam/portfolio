@@ -43,8 +43,8 @@ function App() {
       alert("This site is currently available only in desktop mode");
       var metaTag = document.createElement('meta');
       metaTag.name = "viewport"
-      // metaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-      metaTag.content = "width=1024"
+      metaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      // metaTag.content = "width=1024"
       document.getElementsByTagName('head')[0].appendChild(metaTag);
     } else {
       setIsMobile(false);
