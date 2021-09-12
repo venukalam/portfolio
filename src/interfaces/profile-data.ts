@@ -49,7 +49,7 @@ export interface Interest {
 
 export interface Skill {
     title: string;
-    expertise: string;
+    expertise: number;
 }
 
 export interface WorkExperience {
