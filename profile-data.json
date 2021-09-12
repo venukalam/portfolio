@@ -77,27 +77,31 @@
         "skills": [
             {
                 "title": "Angular",
-                "expertise": ""
-            },
-            {
-                "title": "SharePoint Spfx",
-                "expertise": ""
+                "expertise": 5
             },
             {
                 "title": "React JS",
-                "expertise": ""
+                "expertise": 5
+            },
+            {
+                "title": "Sharepoint",
+                "expertise": 5
             },
             {
                 "title": "C#",
-                "expertise": ""
+                "expertise": 5
             },
             {
                 "title": "SQL",
-                "expertise": ""
+                "expertise": 5
             },
             {
                 "title": "JavaScript",
-                "expertise": ""
+                "expertise": 5
+            },
+            {
+                "title": ".Net",
+                "expertise": 4
             }
         ],
         "education": [
